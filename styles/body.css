@@ -1,0 +1,20 @@
+body {
+    outline: solid red 2px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+
+    background-image: url(../assets/background.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    &>img {
+        width: 138px;
+        height: 29px;
+        object-fit: cover;
+    }
+}
