@@ -14,37 +14,44 @@
 
 </head>
 <body>
-    <img src="assets/logo.svg" alt="logo">
+
+    <header class="logo-container">
+        <img src="assets/logo.svg" alt="Convert (logo)">
+        <h1>CONVERT</h1>
+    </header>
+
     <main>
         <form action="#">
             
             <label>
                 VALOR
-                <input type="text" name="valor" id="value" value="100.00" class="input">
+                <input type="text" name="amount" id="amount" placeholder="0,00" required>
             </label>
             
             <label>
                 MOEDA
-                <select name="moeda" id="coin" class="input">
+                <select name="currency" id="currency">
                     <option value="" disabled selected>Selecione a moeda</option>
-                    <option value="dollar">Dólar americano</option>
-                    <option value="euro">Euro</option>
-                    <option value="yen">Iene japonês</option>
-                    <option value="peso">Peso argentino</option>
-                    <option value="yuan">Yuan chinês</option>
+                    <option value="USD">Dólar (USD)</option>
+                    <option value="EUR">Euro (EUR)</option>
+                    <option value="JPY">Iene (JPY)</option>
+                    <option value="ARS">Peso (ARS)</option>
+                    <option value="CNY">Yuan (CNY)</option>
                 </select>
             </label>
 
-            <input type="submit" value="Converte em reais" class="btn">
+            <button type="submit">Converter em reais</button>
+
         </form>
+
         <div class="result-container">
-            <p class="result-quote">
-                US$ 1 = R$ 4,86
-            </p>
-            <p class="result-value">
-                486,00 Reais
-            </p>
+
+            <p class="result-quote">US$ 1 = R$ 4,86</p>
+            <h2 class="result-value">486,00 Reais</h2>
+
         </div>
+
     </main>
+
 </body>
 </html>
