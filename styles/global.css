@@ -22,11 +22,7 @@
     --body: 400 16px/20px var(--ff-inter);
     --label: 400 12px/16px var(--ff-inter);
 
-    --ff-ibm: "IBM Plex Mono", monospace;
-    --span: 400 16px/20px var(--ff-ibm);
-}
+    --span: 400 16px/20px "IBM Plex Mono", monospace;
 
-body {
-    font: var(--body);
-    color: var(--white);
+    --logo: 400 20px/23px "Monomaniac One", sans-serif;
 }

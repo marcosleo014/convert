@@ -10,7 +10,7 @@
     <title>Conversor de moedas</title>
     <link rel="stylesheet" href="styles/index.css">
 
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Inter:opsz,wght@14..32,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Inter:opsz,wght@14..32,100..900&family=Monomaniac+One&display=swap" rel="stylesheet">
 
 </head>
 <body>
@@ -21,15 +21,15 @@
     </header>
 
     <main>
-        <form action="#">
+        <form action="#" class="border-form">
             
             <label>
-                VALOR
-                <input type="text" name="amount" id="amount" placeholder="0,00" required>
+                <span>VALOR</span>
+                <input type="text" name="amount" id="amount" value="0,00" required>
             </label>
             
             <label>
-                MOEDA
+                <span>MOEDA</span>
                 <select name="currency" id="currency">
                     <option value="" disabled selected>Selecione a moeda</option>
                     <option value="USD">Dólar (USD)</option>
