@@ -99,7 +99,7 @@ function convertedResult(amount, quote) {
 
 let coinsQuotes;
 let api = 'https://api.fxratesapi.com/latest?base=BRL';
-// api = 'não';
+// api = 'not-api';
 fetch(api)
   .then(resposta => resposta.json())
   .then(dados => {

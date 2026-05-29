@@ -120,6 +120,15 @@ button:disabled {
     padding: 40px;
     border-radius: 0 0 24px 24px;
 
+    position: relative;
+    z-index: -1;
+    transform: scaleY(1) translateY(0);
+    opacity: 1;
+    transition: 
+        opacity ease-in-out 250ms,
+        transform ease-in-out 350ms
+    ;       
+
     .result-quote {
         font: var(--span);
         color: var(--blue-800);
@@ -132,7 +141,8 @@ button:disabled {
 }
 
 .display-none {
-    display: none;
+    transform: scaleY(0.5) translateY(-200px);
+    opacity: 0;
 }
 
 @media (height < 680px) {
