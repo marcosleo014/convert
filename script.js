@@ -46,7 +46,7 @@ addEventListener('submit', (event) => {
   }
 
   // ajuste para gerar o valor do input
-  const valor = Number(inputAmount.value.replace('.', '').replace(',', '.'));
+  const valor = Number(inputAmount.value.replace(/\./g, '').replace(',', '.'));
   // moeda selecionada no select
   const quote = select.value;
 
@@ -72,7 +72,7 @@ addEventListener('submit', (event) => {
       symbQuote = '¥1';
       break;
   }
-  resultQuote.innerText = `${symbQuote} = R$ ${result['quoteFactor'].toFixed(2)}`;
+  resultQuote.innerText = `${symbQuote} = R$ ${result['quoteFactor'].toFixed(6)}`;
   resultValue.innerText = `R$ ${result['amountResult'].toLocaleString("pt-BR", {
     minimumFractionDigits: 2,
     maximumFractionDigits: 2
@@ -85,11 +85,9 @@ addEventListener('submit', (event) => {
 
 // função que retona a quantia convertida
 function convertedResult(amount, quote) {
-  let quoteFactor =
-    quote === 'USD'
-      ? coinsQuotes['BRL']
-      : coinsQuotes['BRL'] / coinsQuotes[quote];
-  let amountResult =quoteFactor * amount;
+  let quoteFactor = 1 / coinsQuotes[quote];
+  let amountResult = amount / coinsQuotes[quote].toFixed(6);
+  console.log('cotação:', quoteFactor)
   return {
     'quoteFactor': +quoteFactor,
     'amountResult': +amountResult
@@ -100,8 +98,8 @@ function convertedResult(amount, quote) {
 
 
 let coinsQuotes;
-let api = 'https://api.fxratesapi.com/latest/'
-// api = 'não'
+let api = 'https://api.fxratesapi.com/latest?base=BRL';
+// api = 'não';
 fetch(api)
   .then(resposta => resposta.json())
   .then(dados => {
