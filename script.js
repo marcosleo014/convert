@@ -5,6 +5,7 @@ const button = document.querySelector('button');
 const resultContainer = document.querySelector('.result-container')
 const resultQuote = document.querySelector('.result-quote');
 const resultValue = document.querySelector('.result-value');
+const DEFAULT_FONT_SIZE = getComputedStyle(resultValue).fontSize.replace('px', '');
 
 // ajuste do valor no input
 inputAmount.addEventListener('input', (event) => {
@@ -32,7 +33,7 @@ select.onblur = () => {
   focusSelect = false;
 };
 
-// evento submit
+// --------------------------- evento submit -------------------------------
 addEventListener('submit', (event) => {
   event.preventDefault();
 
@@ -78,6 +79,9 @@ addEventListener('submit', (event) => {
     maximumFractionDigits: 2
   })}`;
 
+  // ajuste da fonte do value-result
+  adjustFontSize()
+
   // surgimento do result-container
   resultContainer.classList.remove('display-none');
   form.classList.add('border-form');
@@ -87,15 +91,12 @@ addEventListener('submit', (event) => {
 function convertedResult(amount, quote) {
   let quoteFactor = 1 / coinsQuotes[quote];
   let amountResult = amount / coinsQuotes[quote].toFixed(6);
-  console.log('cotação:', quoteFactor)
   return {
     'quoteFactor': +quoteFactor,
     'amountResult': +amountResult
   };
 }
-
-
-
+// ------------------------------- fim envento submit ------------------------------
 
 let coinsQuotes;
 let api = 'https://api.fxratesapi.com/latest?base=BRL';
@@ -108,4 +109,23 @@ fetch(api)
   }).catch( (error) => {
     alert ("Erro na conexão com as cotas das moedas");
     console.log(error);
-  });
+  })
+;
+
+// função para o ajuste tamanho do texto result-value
+function adjustFontSize() {
+  resultValue.style.fontSize = DEFAULT_FONT_SIZE + 'px';
+
+  const containerWidth = resultContainer.clientWidth;
+  const textWidth = resultValue.clientWidth;
+
+  if (textWidth > containerWidth) {
+    if (textWidth / containerWidth > 2) {
+      alert("Me diz aqui.. qual o motivo desse exagero???")
+      console.log('Filha da puta quer quebrar o layout mesmo ne????')
+    }
+    const factor = (containerWidth*0.9) / (textWidth);
+    const newFontSize = DEFAULT_FONT_SIZE * factor;
+    resultValue.style.fontSize = newFontSize + 'px';
+  }
+}

@@ -30,6 +30,7 @@ header {
 
 main {
     width: 480px;
+    overflow: hidden;
 }
 
 form {
@@ -122,10 +123,10 @@ button:disabled {
 
     position: relative;
     z-index: -1;
-    transform: scaleY(1) translateY(0);
+    transform: translateY(0);
     opacity: 1;
-    transition: 
-        opacity ease-in-out 250ms,
+    transition:
+        opacity ease-out 100ms, 
         transform ease-in-out 350ms
     ;       
 
@@ -137,11 +138,12 @@ button:disabled {
     .result-value {
         font: var(--heading);
         color: var(--white);
+        white-space: nowrap;
     }
 }
 
 .display-none {
-    transform: scaleY(0.5) translateY(-200px);
+    transform: translateY(-110px);
     opacity: 0;
 }
 
