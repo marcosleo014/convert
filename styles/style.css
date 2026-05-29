@@ -104,6 +104,11 @@ button {
     }
 }
 
+button:disabled {
+    background-color: #8B8ECF;
+    color: #C2C4D6;
+}
+
 .result-container {
     background-color: var(--blue-400);
     border: 1px solid var(--blue-500);
@@ -126,6 +131,10 @@ button {
     }
 }
 
+.display-none {
+    display: none;
+}
+
 @media (height < 680px) {
     body {
         height: auto;
@@ -133,7 +142,7 @@ button {
     }
 }
 
-@media (width < 560px) {
+@media (width < 720px) {
 
     main {
         width: 260px;
