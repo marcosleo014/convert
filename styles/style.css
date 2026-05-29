@@ -132,3 +132,39 @@ button {
         padding-block: 50px;
     }
 }
+
+@media (width < 560px) {
+
+    main {
+        width: 260px;
+    }
+
+    input, select, button {
+        padding: 10px 15px;
+    }
+
+    form {
+        border-radius: 24px;
+        padding: 25px 20px 25px;
+        gap: 10px;
+    }
+
+    button {
+        margin-top: 12px;
+    }
+
+    .result-container {
+        padding: 25px;
+    }
+
+    :root {
+        --heading: 700 25px/38px var(--ff-inter);
+        --button: 600 13px/16px var(--ff-inter);
+        --body: 400 13px/16px var(--ff-inter);
+        --label: 400 10px/13px var(--ff-inter);
+
+        --span: 400 13px/16px "IBM Plex Mono", monospace;
+
+        --logo: 400 20px/23px "Monomaniac One", sans-serif;
+    }
+}
