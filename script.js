@@ -23,13 +23,13 @@ let focusSelect = false;
 select.onclick = () => {
   focusSelect = !focusSelect;
   if (focusSelect) {
-    select.style.backgroundImage = 'url(../assets/setinha-focus-down.svg)'
+    select.style.backgroundImage = 'url(assets/setinha-focus-down.svg)'
   } else {
-    select.style.backgroundImage = 'url(../assets/setinha-focus-up.svg)'
+    select.style.backgroundImage = 'url(assets/setinha-focus-up.svg)'
   }
 }
 select.onblur = () => {
-  select.style.backgroundImage = 'url(../assets/setinha.svg)'
+  select.style.backgroundImage = 'url(assets/setinha.svg)'
   focusSelect = false;
 };
 
